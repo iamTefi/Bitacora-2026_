@@ -1,0 +1,264 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Bitácora 2026</title>
+
+<style>
+body {
+  margin: 0;
+  background: black;
+  overflow: hidden;
+  font-family: serif;
+}
+
+/* TÍTULO */
+#titulo {
+  position: fixed;
+  top: 20px;
+  left: 30px;
+  color: white;
+  font-size: 26px;
+  letter-spacing: 2px;
+  z-index: 10;
+}
+
+/* CONTENEDOR */
+#contenedor {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  cursor: grab;
+}
+
+/* MAPA */
+#mapa {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#mapa img {
+  width: 1000px;
+  display: block;
+}
+
+/* BLUR CON ZONA REVELADA */
+#blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1000px;
+
+  filter: blur(10px) brightness(0.5);
+
+  -webkit-mask-image: radial-gradient(circle at 38% 90%, transparent 130px, black 220px);
+  mask-image: radial-gradient(circle at 38% 90%, transparent 130px, black 220px);
+
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* PUNTO */
+.punto {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: gold;
+  border-radius: 50%;
+  box-shadow: 0 0 20px gold;
+  z-index: 3;
+  cursor: pointer;
+}
+
+/* PANEL */
+#panel {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 320px;
+  height: 100%;
+  background: rgba(0,0,0,0.92);
+  padding: 20px;
+  display: none;
+  color: white;
+  overflow-y: auto;
+}
+
+/* APARICIÓN TEXTO */
+.fade {
+  opacity: 0;
+  animation: aparecer 1.5s forwards;
+}
+
+@keyframes aparecer {
+  to { opacity: 1; }
+}
+
+/* PARPADEO */
+.parpadeo {
+  animation: blink 1.2s infinite;
+}
+
+.parpadeo-fuerte {
+  animation: blink 0.4s infinite;
+}
+
+.parpadeo-raro {
+  animation: blinkRaro 2s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+@keyframes blinkRaro {
+  0%,100% { opacity: 1; }
+  10% { opacity: 0; }
+  20% { opacity: 1; }
+  35% { opacity: 0.3; }
+  50% { opacity: 1; }
+  70% { opacity: 0; }
+  80% { opacity: 1; }
+}
+
+/* TEXTO FINAL */
+.final {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.error {
+  margin-top: 30px;
+  font-size: 12px;
+  opacity: 0.5;
+  animation: blink 1.5s infinite;
+}
+</style>
+</head>
+
+<body>
+
+<div id="titulo">Bitácora 2026 — Stefania Gonzalez</div>
+
+<div id="contenedor">
+  <div id="mapa">
+
+    <img src="img/mapa.png">
+    <img src="img/mapa.png" id="blur">
+
+    <!-- PUNTO (MISMA POSICIÓN) -->
+    <div class="punto" style="top: 90%; left: 38%;" onclick="mostrar()"></div>
+
+  </div>
+</div>
+
+<div id="panel"></div>
+
+<script>
+
+/* TÍTULO INESTABLE */
+const titulo = document.getElementById("titulo");
+titulo.classList.add("parpadeo-raro");
+
+setTimeout(() => {
+  titulo.classList.remove("parpadeo-raro");
+}, 2500);
+
+/* PANEL */
+function mostrar() {
+  document.getElementById("panel").innerHTML = `
+    <h2>Sitio de Gracia — Mes 1</h2>
+
+    <p class="fade">Las señales comienzan a aparecer.</p>
+
+    <p class="fade">
+      He encontrado a los 
+      <span class="parpadeo-raro">tiznados</span>, 
+      desafiantes del conocimiento, portadores de preguntas aún sin forma.
+    </p>
+
+    <p class="fade">
+      Nos reunimos al borde de lo 
+      <span class="parpadeo">conocido</span>, 
+      donde la imagen aún no se fija y el pensamiento apenas se modela.
+    </p>
+
+    <p class="fade">
+      Este viaje inicia con la intención de construir, 
+      de explorar territorios tridimensionales, 
+      de levantar 
+      <span class="parpadeo">dioramas</span> 
+      como rastros de lo que habita en lo cotidiano y lo imaginado.
+    </p>
+
+    <p class="fade">
+      Las tierras baldías no están lejos. 
+      Se filtran en la ciudad, en sus grietas, 
+      en aquello que aún no ha sido observado.
+    </p>
+
+    <p class="fade">
+      No sabemos aún qué forma tomará este recorrido, 
+      pero la señal es clara:
+    </p>
+
+    <p class="final">
+      <span class="parpadeo-fuerte">avanzar</span>, incluso sin mapa.
+    </p>
+
+    <p class="fade">La señal no es estable.</p>
+    <p class="fade">Algo intenta formarse.</p>
+
+    <p class="error">▮ cruza la niebla ▮</p>
+  `;
+
+  document.getElementById("panel").style.display = "block";
+}
+
+/* ZOOM + DRAG */
+let escala = 1;
+let posX = 0;
+let posY = 0;
+let arrastrando = false;
+let inicioX = 0;
+let inicioY = 0;
+
+const contenedor = document.getElementById("contenedor");
+const mapa = document.getElementById("mapa");
+
+function actualizar() {
+  mapa.style.transform = `translate(${posX}px, ${posY}px) scale(${escala})`;
+}
+
+contenedor.addEventListener("wheel", function(e) {
+  e.preventDefault();
+  escala += (e.deltaY < 0) ? 0.1 : -0.1;
+  escala = Math.max(0.5, Math.min(3, escala));
+  actualizar();
+}, { passive: false });
+
+contenedor.addEventListener("mousedown", function(e) {
+  arrastrando = true;
+  contenedor.style.cursor = "grabbing";
+  inicioX = e.clientX - posX;
+  inicioY = e.clientY - posY;
+});
+
+window.addEventListener("mousemove", function(e) {
+  if (!arrastrando) return;
+  posX = e.clientX - inicioX;
+  posY = e.clientY - inicioY;
+  actualizar();
+});
+
+window.addEventListener("mouseup", function() {
+  arrastrando = false;
+  contenedor.style.cursor = "grab";
+});
+
+</script>
+
+</body>
+</html>
