@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+```html
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -41,22 +42,6 @@ body {
 #mapa img {
   width: 1000px;
   display: block;
-}
-
-/* BLUR */
-#blur {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1000px;
-
-  filter: blur(10px) brightness(0.5);
-
-  -webkit-mask-image: radial-gradient(circle at 38% 90%, transparent 130px, black 220px);
-  mask-image: radial-gradient(circle at 38% 90%, transparent 130px, black 220px);
-
-  pointer-events: none;
-  z-index: 2;
 }
 
 /* PUNTOS */
@@ -148,6 +133,38 @@ body {
   opacity: 0;
   animation: aparecer 1s forwards;
 }
+#menu-meses{
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+
+  display: flex;
+  gap: 10px;
+
+  background: rgba(0,0,0,0.7);
+  padding: 10px 16px;
+  border: 1px solid rgba(255,215,0,0.3);
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+}
+
+#menu-meses button{
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-family: serif;
+  transition: 0.3s;
+}
+
+#menu-meses button:hover{
+  border-color: gold;
+  color: gold;
+  box-shadow: 0 0 10px gold;
+}
 </style>
 </head>
 
@@ -159,7 +176,6 @@ body {
   <div id="mapa">
 
     <img src="img/mapa.png">
-    <img src="img/mapa.png" id="blur">
 
     <!-- MES 1 -->
     <div class="punto" style="top: 90%; left: 38%;" onclick="mostrar()"></div>
@@ -167,10 +183,18 @@ body {
     <!-- MES 2 (ABRIL) -->
     <div class="punto" style="top: 75%; left: 45%;" onclick="mostrarAbril()"></div>
 
+    <!-- MES 3 (MAYO) -->
+    <div class="punto" style="top: 70%; left: 57%;" onclick="mostrarMayo()"></div>
+
   </div>
 </div>
 
 <div id="panel"></div>
+<div id="menu-meses">
+  <button onclick="mostrar()">Marzo</button>
+  <button onclick="mostrarAbril()">Abril</button>
+  <button onclick="mostrarMayo()">Mayo</button>
+</div>
 
 <script>
 
@@ -190,33 +214,33 @@ function mostrar() {
     <p class="fade">Las señales comienzan a aparecer.</p>
 
     <p class="fade">
-      He encontrado a los 
-      <span class="parpadeo-raro">tiznados</span>, 
+      He encontrado a los
+      <span class="parpadeo-raro">tiznados</span>,
       desafiantes del conocimiento, portadores de preguntas aún sin forma.
     </p>
 
     <p class="fade">
-      Nos reunimos al borde de lo 
-      <span class="parpadeo">conocido</span>, 
+      Nos reunimos al borde de lo
+      <span class="parpadeo">conocido</span>,
       donde la imagen aún no se fija y el pensamiento apenas se modela.
     </p>
 
     <p class="fade">
-      Este viaje inicia con la intención de construir, 
-      de explorar territorios tridimensionales, 
-      de levantar 
-      <span class="parpadeo">dioramas</span> 
+      Este viaje inicia con la intención de construir,
+      de explorar territorios tridimensionales,
+      de levantar
+      <span class="parpadeo">dioramas</span>
       como rastros de lo que habita en lo cotidiano y lo imaginado.
     </p>
 
     <p class="fade">
-      Las tierras baldías no están lejos. 
-      Se filtran en la ciudad, en sus grietas, 
+      Las tierras baldías no están lejos.
+      Se filtran en la ciudad, en sus grietas,
       en aquello que aún no ha sido observado.
     </p>
 
     <p class="fade">
-      No sabemos aún qué forma tomará este recorrido, 
+      No sabemos aún qué forma tomará este recorrido,
       pero la señal es clara:
     </p>
 
@@ -292,11 +316,11 @@ function mostrarAbril() {
 
     <div id="g1" class="seccion-oculta">
       <p>
-        El grupo ha comenzado a reconocerse en medio de la incertidumbre. 
-        Aunque no todos demuestran una disposición evidente hacia la acción, 
-        se han permitido habitar la pregunta. 
-        Han comenzado a cuestionarse quiénes son y qué esperan del devenir de los días, 
-        abriendo un espacio de diálogo que, poco a poco, ha ido revelando tensiones, intereses y posibles direcciones. 
+        El grupo ha comenzado a reconocerse en medio de la incertidumbre.
+        Aunque no todos demuestran una disposición evidente hacia la acción,
+        se han permitido habitar la pregunta.
+        Han comenzado a cuestionarse quiénes son y qué esperan del devenir de los días,
+        abriendo un espacio de diálogo que, poco a poco, ha ido revelando tensiones, intereses y posibles direcciones.
         Esta conversación, aún en construcción, empieza a insinuar el rumbo que podría tomar el proceso creativo colectivo.
       </p>
 
@@ -312,14 +336,124 @@ function mostrarAbril() {
 
     <div id="g2" class="seccion-oculta">
       <p>
-        Un grupo que ya se encontraba consolidado ha comenzado a transformarse al abrir sus puertas a nuevos participantes. 
-        Esta expansión no ha sido solo numérica, sino también simbólica: 
-        cada integrante ha diseñado su propio escudo, un ejercicio de síntesis donde se condensan intereses, identidades y formas de habitar el mundo. 
-        A partir de estos emblemas, se ha generado una discusión colectiva que permite reconocer quiénes conforman el grupo, 
+        Un grupo que ya se encontraba consolidado ha comenzado a transformarse al abrir sus puertas a nuevos participantes.
+        Esta expansión no ha sido solo numérica, sino también simbólica:
+        cada integrante ha diseñado su propio escudo, un ejercicio de síntesis donde se condensan intereses, identidades y formas de habitar el mundo.
+        A partir de estos emblemas, se ha generado una discusión colectiva que permite reconocer quiénes conforman el grupo,
         qué los mueve y cómo se relacionan entre sí dentro de este territorio compartido.
       </p>
 
       <img src="img/1ic.jpg" class="imagen-grupo">
+    </div>
+  `;
+
+  document.getElementById("panel").style.display = "block";
+}
+
+/* MAYO */
+function mostrarMayo() {
+  document.getElementById("panel").innerHTML = `
+    <h2>Sitio de Gracia — Mes 3 (Mayo)</h2>
+
+    <p class="fade">
+      Los senderos comienzan a definirse entre las Tierras Intermedias.
+    </p>
+
+    <p class="fade">
+      Algunos tiznados han dejado atrás el vagar incierto y empiezan a levantar estructuras más firmes,
+      estableciendo rutas, objetivos y vestigios de aquello que desean invocar dentro del territorio.
+    </p>
+
+    <p class="fade">
+      Nuevos grupos han emergido alrededor de los Sitios de Gracia,
+      portando memorias, dudas y formas distintas de observar el mundo.
+    </p>
+
+    <p class="fade">
+      Las mesas se llenan de fragmentos tridimensionales,
+      artefactos manuales, herramientas desconocidas y registros arrancados del espacio mismo.
+    </p>
+
+    <p class="fade">
+      Algunos exploran mediante fotogrametrías, intentando capturar ruinas, superficies y rastros del territorio;
+      otros reúnen materiales para comenzar el levantamiento de dioramas capaces de contener recuerdos, ficciones y recorridos compartidos.
+    </p>
+
+    <p class="fade">
+      Ya no todo es exploración.
+      <br>
+      Lentamente comienzan a aparecer las primeras formas de permanencia.
+    </p>
+
+    <p class="final">
+      El mapa deja de ser únicamente niebla.
+    </p>
+
+    <!-- AS 3601 -->
+    <p>
+      <span class="clickable parpadeo" onclick="toggleSeccion('m1')">
+        AS 3601
+      </span>
+    </p>
+
+    <div id="m1" class="seccion-oculta">
+      <p>
+        Un nuevo grupo de tiznados ha comenzado a reunirse alrededor del Sitio de Gracia.
+        Aún en reconocimiento mutuo, han comenzado a proyectar posibles artefactos nacidos de la memoria y la nostalgia.
+        El sendero parece inclinarse hacia la construcción de juguetes análogos, objetos capaces de activar recuerdos y modos de juego que han marcado la historia de cada viajero.
+        Cada integrante empieza a revelar sus propias habilidades mientras las primeras ideas toman forma dentro del taller.
+      </p>
+
+      <img src="img/M3601.jpg" class="imagen-grupo">
+    </div>
+
+    <!-- IC 6776 -->
+    <p>
+      <span class="clickable parpadeo" onclick="toggleSeccion('m2')">
+        IC 6776
+      </span>
+    </p>
+
+    <div id="m2" class="seccion-oculta">
+      <p>
+        Los más jóvenes continúan explorando territorios tridimensionales mientras imaginan mundos posibles construidos a partir de sus gustos, recorridos y espacios cotidianos.
+        A través de ejercicios iniciales, el grupo comienza a comprender las herramientas del modelado 3D y las formas en que estas permiten levantar escenarios, criaturas y arquitecturas nacidas de su imaginación.
+      </p>
+
+      <img src="img/M6776.jpg" class="imagen-grupo">
+    </div>
+
+    <!-- IC 7043 -->
+    <p>
+      <span class="clickable parpadeo" onclick="toggleSeccion('m3')">
+        IC 7043
+      </span>
+    </p>
+
+    <div id="m3" class="seccion-oculta">
+      <p>
+        Desde la Cinemateca, el grupo continúa experimentando con fotografía y fotogrametría, aprendiendo a capturar fragmentos del territorio para transformarlos en materia de creación.
+        Poco a poco se acumulan registros, superficies y memorias digitales que más adelante servirán para construir dioramas atravesados por recuerdos, reinterpretaciones y visiones alteradas del espacio habitado.
+      </p>
+
+      <img src="img/M7043.jpg" class="imagen-grupo">
+    </div>
+
+    <!-- AE 15226 -->
+    <p>
+      <span class="clickable parpadeo" onclick="toggleSeccion('m4')">
+        AE 15226
+      </span>
+    </p>
+
+    <div id="m4" class="seccion-oculta">
+      <p>
+        El grupo continúa buscando aquello que pueda encender su movimiento.
+        Diversos ejercicios han sido desplegados sin fijar todavía un único rumbo, permitiendo que cada integrante explore intereses, recuerdos e imágenes propias.
+        Entre las rutas posibles comienzan a aparecer la ilustración y la animación como medios para narrar historias vinculadas a la memoria y las experiencias personales de cada uno de los tiznados.
+      </p>
+
+      <img src="img/M15226.jpg" class="imagen-grupo">
     </div>
   `;
 
@@ -377,3 +511,4 @@ window.addEventListener("mouseup", function() {
 
 </body>
 </html>
+```
