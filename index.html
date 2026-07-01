@@ -1,4 +1,4 @@
-```html
+﻿﻿```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -186,6 +186,9 @@ body {
     <!-- MES 3 (MAYO) -->
     <div class="punto" style="top: 70%; left: 57%;" onclick="mostrarMayo()"></div>
 
+    <!-- MES 4 (JUNIO) -->
+    <div class="punto" style="top: 58%; left: 59%;" onclick="mostrarJunio()"></div>
+
   </div>
 </div>
 
@@ -194,6 +197,7 @@ body {
   <button onclick="mostrar()">Marzo</button>
   <button onclick="mostrarAbril()">Abril</button>
   <button onclick="mostrarMayo()">Mayo</button>
+  <button onclick="mostrarJunio()">Junio</button>
 </div>
 
 <script>
@@ -460,6 +464,165 @@ function mostrarMayo() {
   document.getElementById("panel").style.display = "block";
 }
 
+/* JUNIO */
+
+function mostrarJunio() {
+
+document.getElementById("panel").innerHTML = `
+
+<h2>Sitio de Gracia — Mes 4 (Junio)</h2>
+
+<p class="fade">
+La estación del descanso comienza a extender su influencia sobre las Tierras Intermedias.
+</p>
+
+<p class="fade">
+Muchos tiznados dirigen su mirada hacia otros horizontes antes de emprender el siguiente tramo del viaje.
+Los senderos permanecen abiertos, aunque durante algunos días el tránsito se vuelve más silencioso y disperso.
+</p>
+
+<p class="fade">
+No toda ausencia significa abandono.
+Incluso cuando el campamento parece vacío, las ideas continúan creciendo bajo la superficie,
+esperando el momento adecuado para volver a manifestarse.
+</p>
+
+<p class="fade">
+Los artefactos iniciados durante los meses anteriores comienzan a revelar una identidad propia.
+Las búsquedas dejan de ser únicamente exploraciones para convertirse en decisiones conscientes,
+y cada grupo empieza a reconocer el propósito de aquello que desea invocar.
+</p>
+
+<p class="fade">
+Uno de los senderos concluye su recorrido.
+Desde la Cinemateca se elevan fragmentos de memoria convertidos en dioramas,
+vestigios tridimensionales nacidos de la exploración urbana,
+capaces de conservar lugares que solo continúan existiendo gracias al recuerdo de quienes los habitaron.
+</p>
+
+<p class="fade">
+Otros caminos apenas terminan de encontrar su dirección.
+Aunque el ritmo fluctúa,
+la gracia continúa guiando el avance.
+</p>
+
+<p class="final">
+Incluso en tiempos de calma, el mapa continúa escribiéndose.
+</p>
+
+<!-- AS -->
+
+<p>
+
+<span class="clickable parpadeo" onclick="toggleSeccion('j1')">
+
+AS 3601
+
+</span>
+
+</p>
+
+<div id="j1" class="seccion-oculta">
+
+<p>
+
+El Sitio de Gracia permanece encendido, aunque las constantes interrupciones del calendario han dificultado que el grupo despliegue todo su potencial.
+Entre festividades y procesos de adaptación al espacio que ahora habitan, los tiznados avanzan con cautela, aprendiendo primero a reconocer el territorio antes de levantar grandes construcciones.
+A pesar de ello, comienzan a consolidarse las primeras ideas alrededor de los juguetes análogos y de los objetos capaces de despertar memorias compartidas.
+Todavía es un sendero que apenas inicia, pero la dirección empieza a hacerse visible.
+
+</p>
+
+<img src="img/JAS.jpg" class="imagen-grupo">
+
+</div>
+
+<!-- IC6776 -->
+
+<p>
+
+<span class="clickable parpadeo" onclick="toggleSeccion('j2')">
+
+IC 6776
+
+</span>
+
+</p>
+
+<div id="j2" class="seccion-oculta">
+
+<p>
+
+Los cambios constantes en quienes llegan y quienes parten modifican continuamente el equilibrio del grupo.
+Las vacaciones hacen más evidente esta fluctuación, ralentizando por momentos el ritmo colectivo.
+Sin embargo, quienes permanecen continúan fortaleciendo una mirada crítica sobre la realidad mediante el modelado tridimensional.
+Las herramientas ya no representan un desafío inicial; ahora comienzan a convertirse en un lenguaje desde el cual interpretar el mundo y transformarlo en escenarios posibles.
+
+</p>
+
+<img src="img/JICSP.jpg" class="imagen-grupo">
+
+</div>
+
+<!-- IC7043 -->
+
+<p>
+
+<span class="clickable parpadeo" onclick="toggleSeccion('j3')">
+
+IC 7043
+
+</span>
+
+</p>
+
+<div id="j3" class="seccion-oculta">
+
+<p>
+
+El recorrido por este territorio llega a su fin dejando tras de sí uno de los vestigios más sólidos del viaje.
+A través de la exploración urbana, la memoria y la reinterpretación de los espacios cotidianos, cada participante dio forma a un diorama capaz de contener fragmentos de su propia historia.
+Aunque algunos viajeros debieron abandonar el sendero antes de concluir la travesía debido a compromisos laborales o a la falta de tiempo, las piezas construidas conservan la fuerza de aquello que consiguió materializarse.
+El Sitio de Gracia queda atrás, pero las huellas permanecerán inscritas en el mapa.
+
+</p>
+
+<img src="img/JICCI.jpg" class="imagen-grupo">
+
+</div>
+
+<!-- AE -->
+
+<p>
+
+<span class="clickable parpadeo" onclick="toggleSeccion('j4')">
+
+AE 15226
+
+</span>
+
+</p>
+
+<div id="j4" class="seccion-oculta">
+
+<p>
+
+El grupo ha decidido alterar el rumbo de su expedición.
+Tras reconocer las necesidades, intereses y posibilidades de quienes integran el colectivo, la ilustración deja paso a un nuevo sendero: la animación digital.
+Cada participante comienza a elegir un lugar significativo de su propia memoria para convertirlo en escenario de relatos ficticios, mezclando recuerdos personales con nuevas narrativas.
+Aunque en ocasiones la desmotivación propia de la adolescencia ralentiza el avance, este cambio de dirección ha renovado el impulso del grupo, permitiendo que el recorrido continúe con mayor claridad y compromiso.
+
+</p>
+
+<img src="img/JAE.jpg" class="imagen-grupo">
+
+</div>
+
+`;
+
+document.getElementById("panel").style.display="block";
+
+}
 /* TOGGLE */
 function toggleSeccion(id) {
   const el = document.getElementById(id);
