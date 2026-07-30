@@ -1,4 +1,4 @@
-﻿﻿```html
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -189,6 +189,9 @@ body {
     <!-- MES 4 (JUNIO) -->
     <div class="punto" style="top: 58%; left: 59%;" onclick="mostrarJunio()"></div>
 
+    <!-- MES 5 (JULIO) -->
+<div class="punto" style="top: 85%; left: 33%;" onclick="mostrarJulio()"></div>
+
   </div>
 </div>
 
@@ -198,6 +201,7 @@ body {
   <button onclick="mostrarAbril()">Abril</button>
   <button onclick="mostrarMayo()">Mayo</button>
   <button onclick="mostrarJunio()">Junio</button>
+  <button onclick="mostrarJulio()">Julio</button>
 </div>
 
 <script>
@@ -621,6 +625,102 @@ Aunque en ocasiones la desmotivación propia de la adolescencia ralentiza el ava
 `;
 
 document.getElementById("panel").style.display="block";
+
+}
+/* JULIO */
+function mostrarJulio() {
+
+document.getElementById("panel").innerHTML = `
+
+<h2>Sitio de Gracia — Mes 5 (Julio)</h2>
+
+<p class="fade">
+La Gracia vuelve a extender sus hilos sobre el territorio.
+</p>
+
+<p class="fade">
+Las sendas, antes cubiertas por el silencio y la dispersión, reciben nuevamente las huellas de los tiznados. El viaje recupera su ritmo mientras el mapa revela nuevos fragmentos de un camino que ya no necesita ser descubierto, sino recorrido con paciencia.
+</p>
+
+<p class="fade">
+Cada viajero permanece junto a la llama que ha decidido custodiar. Las ideas, que alguna vez fueron apenas un destello entre la niebla, son trabajadas con dedicación una y otra vez, hasta encontrar la forma que les corresponde. Ningún vestigio es invocado con prisa; incluso la piedra más pequeña exige ser observada antes de ocupar su lugar entre las ruinas.
+</p>
+
+<p class="fade">
+Dicen los antiguos que ningún sendero se revela por completo a quien solo desea atravesarlo. Es el caminante que acepta demorarse quien termina descubriendo aquello que la Gracia había ocultado desde el principio.
+</p>
+
+<p class="fade">
+El territorio permanece en silencio.
+</p>
+
+<p class="final">
+Pero bajo sus cenizas, algo continúa tomando forma.
+</p>
+
+<!-- AS 3601 -->
+
+<p>
+<span class="clickable parpadeo" onclick="toggleSeccion('j1')">
+AS 3601
+</span>
+</p>
+
+<div id="j1" class="seccion-oculta">
+
+<p>
+
+Aunque el sendero ha sido interrumpido por constantes pausas, la marcha no se ha detenido. Cada encuentro ha permitido descubrir antiguos juguetes ópticos y comprender que el movimiento puede surgir de la ilusión antes que de la materia. Poco a poco, el grupo reúne estos hallazgos como quien rescata reliquias olvidadas, sembrando las primeras ideas para el artefacto que, más adelante, comenzará a levantarse con sus propias manos.
+
+</p>
+
+<img src="img/julas.jpg" class="imagen-grupo">
+
+</div>
+
+<!-- IC 6776 -->
+
+<p>
+<span class="clickable parpadeo" onclick="toggleSeccion('j2')">
+IC 6776
+</span>
+</p>
+
+<div id="j2" class="seccion-oculta">
+
+<p>
+
+El territorio comienza a poblarse de detalles. Mientras algunos tiznados permanecen dando forma a las texturas que vestirán sus mundos tridimensionales, otros aún recorren los primeros senderos, familiarizándose con las herramientas que les permitirán levantar sus propios escenarios. Cada viajero avanza a su propio ritmo, pero todos continúan siguiendo la misma Gracia, comprendiendo que incluso los pasos más lentos también dejan huella sobre el mapa.
+
+</p>
+
+<img src="img/julic.jpg" class="imagen-grupo">
+
+</div>
+
+<!-- AE 15226 -->
+
+<p>
+<span class="clickable parpadeo" onclick="toggleSeccion('j3')">
+AE 15226
+</span>
+</p>
+
+<div id="j3" class="seccion-oculta">
+
+<p>
+
+Cada tiznado permanece junto a la historia que ha decidido contar. Las ilustraciones continúan tomando forma mientras sus creadores aprenden a insuflar movimiento a escenas que antes permanecían inmóviles. Fotograma tras fotograma, cada relato encuentra una nueva manera de habitar el territorio, descubriendo que incluso el más pequeño gesto puede transformar por completo el sentido de una historia.
+
+</p>
+
+<img src="img/julae.jpg" class="imagen-grupo">
+
+</div>
+
+`;
+
+document.getElementById("panel").style.display = "block";
 
 }
 /* TOGGLE */
