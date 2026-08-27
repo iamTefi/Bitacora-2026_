@@ -192,6 +192,9 @@ body {
     <!-- MES 5 (JULIO) -->
 <div class="punto" style="top: 85%; left: 33%;" onclick="mostrarJulio()"></div>
 
+    <!-- MES 6 (AGOSTO) -->
+    <div class="punto" style="top: 75%; left: 30%;" onclick="mostrarAgosto()"></div>
+
   </div>
 </div>
 
@@ -202,6 +205,7 @@ body {
   <button onclick="mostrarMayo()">Mayo</button>
   <button onclick="mostrarJunio()">Junio</button>
   <button onclick="mostrarJulio()">Julio</button>
+  <button onclick="mostrarAgosto()">Agosto</button>
 </div>
 
 <script>
@@ -722,6 +726,106 @@ Cada tiznado permanece junto a la historia que ha decidido contar. Las ilustraci
 
 document.getElementById("panel").style.display = "block";
 
+}
+/* AGOSTO */
+function mostrarAgosto() {
+  document.getElementById("panel").innerHTML = `
+    <h2>Sitio de Gracia — Mes 6 (Agosto)</h2>
+
+    <p class="fade">
+      La Gracia arde al borde de un nuevo territorio.
+    </p>
+
+    <p class="fade">
+      Desde aquí, los senderos se distinguen con mayor claridad. Tras las interrupciones de la estación anterior, los tiznados han recuperado el paso y cada uno ha vuelto a internarse en la ruta que eligió. Las ideas que antes aguardaban entre la niebla ahora reclaman materia: imágenes que deben ser trabajadas, formas que deben ser corregidas y proyectos que avanzan poco a poco hacia aquello que buscan convertirse.
+    </p>
+
+    <p class="fade">
+      El mapa, sin embargo, no permanece inmóvil.
+    </p>
+
+    <p class="fade">
+      Una nueva región ha aparecido junto al camino conocido. Sus habitantes han comenzado a acercarse al Sitio de Gracia, todavía ajenos a las costumbres de este territorio. Durante sus primeros encuentros han surgido juegos, pruebas y conversaciones; entre ellos, algunos han comenzado a reconocer en este lugar una posibilidad que aún no tiene nombre.
+    </p>
+
+    <p class="fade">
+      Mientras tanto, los demás senderos continúan su marcha.
+    </p>
+
+    <p class="fade">
+      La Gracia observa en silencio cómo cada viajero deja nuevas marcas sobre el territorio. El camino ya no es el mismo que encontraron al principio, y tampoco lo son quienes ahora lo recorren.
+    </p>
+
+    <p class="fade">
+      Más allá de la llama, la niebla vuelve a cerrarse sobre el mapa.
+    </p>
+
+    <p class="fade">
+      Aún queda mucho por descubrir.
+    </p>
+
+    <!-- IC 6776 -->
+    <p>
+      <span class="clickable parpadeo" onclick="toggleSeccion('ag6776')">
+        IC 6776
+      </span>
+    </p>
+
+    <div id="ag6776" class="seccion-oculta">
+      <p>
+        El sendero continúa con paso firme. Cada tiznado avanza a su propio ritmo, concentrado en desarrollar su propuesta y fortalecer aquello que ha comenzado a construir. Sin grandes cambios en la ruta, el trabajo constante permite que cada proyecto gane forma y solidez.
+      </p>
+
+      <img src="img/ag6776.jpg" class="imagen-grupo">
+    </div>
+
+    <!-- AE 15226 -->
+    <p>
+      <span class="clickable parpadeo" onclick="toggleSeccion('ag15226')">
+        AE 15226
+      </span>
+    </p>
+
+    <div id="ag15226" class="seccion-oculta">
+      <p>
+        El grupo mantiene su recorrido y continúa trabajando con atención sobre sus proyectos. Aunque la asistencia y la participación presentan algunas fluctuaciones, los tiznados han logrado sostener los acuerdos establecidos y avanzar de manera constante en el sendero que eligieron.
+      </p>
+
+      <img src="img/ag15226.jpg" class="imagen-grupo">
+    </div>
+
+    <!-- AS 3601 -->
+    <p>
+      <span class="clickable parpadeo" onclick="toggleSeccion('ag3601')">
+        AS 3601
+      </span>
+    </p>
+
+    <div id="ag3601" class="seccion-oculta">
+      <p>
+        El territorio se ha llenado de viento. Aprovechando la temporada, el grupo ha convertido el taller en un espacio para construir y poner a prueba distintos prototipos de cometas. Cada prueba permite descubrir nuevas posibilidades mientras el proyecto encuentra poco a poco su propia forma.
+      </p>
+
+      <img src="img/ag3601.jpg" class="imagen-grupo">
+    </div>
+
+    <!-- AS 3767 -->
+    <p>
+      <span class="clickable parpadeo" onclick="toggleSeccion('ag3767')">
+        AS 3767
+      </span>
+    </p>
+
+    <div id="ag3767" class="seccion-oculta">
+      <p>
+        Un nuevo sendero comienza a abrirse. El grupo, aún en proceso de reconocimiento, ha mostrado dificultades para encontrar una motivación común, pero entre los primeros encuentros ha surgido una posibilidad: iniciar un recorrido audiovisual y descubrir, cámara en mano, hacia dónde puede conducir este territorio todavía desconocido.
+      </p>
+
+      <img src="img/ag3767.jpg" class="imagen-grupo">
+    </div>
+  `;
+
+  document.getElementById("panel").style.display = "block";
 }
 /* TOGGLE */
 function toggleSeccion(id) {
