@@ -190,10 +190,13 @@ body {
     <div class="punto" style="top: 58%; left: 59%;" onclick="mostrarJunio()"></div>
 
     <!-- MES 5 (JULIO) -->
-<div class="punto" style="top: 85%; left: 33%;" onclick="mostrarJulio()"></div>
+    <div class="punto" style="top: 85%; left: 33%;" onclick="mostrarJulio()"></div>
 
     <!-- MES 6 (AGOSTO) -->
     <div class="punto" style="top: 75%; left: 30%;" onclick="mostrarAgosto()"></div>
+
+    <!-- MES 7 (SEPTIEMBRE) -->
+    <div class="punto" style="top: 70%; left: 25%;" onclick="mostrarSeptiembre()"></div>
 
   </div>
 </div>
@@ -206,6 +209,7 @@ body {
   <button onclick="mostrarJunio()">Junio</button>
   <button onclick="mostrarJulio()">Julio</button>
   <button onclick="mostrarAgosto()">Agosto</button>
+  <button onclick="mostrarSeptiembre()">Septiembre</button>
 </div>
 
 <script>
@@ -826,7 +830,134 @@ function mostrarAgosto() {
   `;
 
   document.getElementById("panel").style.display = "block";
+  
 }
+  /* SEPTIEMBRE */
+function mostrarSeptiembre() {
+  document.getElementById("panel").innerHTML = `
+    <h2>Sitio de Gracia — Mes 7 (Septiembre)</h2>
+
+    <p class="fade">
+      La Gracia permanece encendida en una región donde los senderos comienzan a cerrarse.
+    </p>
+
+    <p class="fade">
+      Los tiznados han recorrido suficiente territorio para reconocer las marcas que dejaron atrás.
+      Aquello que alguna vez apareció como un fragmento entre la niebla ahora forma parte de estructuras más completas.
+      Las herramientas encontradas durante el viaje han dejado de ser simples artefactos:
+      cada una ha sido puesta a prueba, dominada y utilizada para pulir aquello que empieza a tomar forma.
+    </p>
+
+    <p class="fade">
+      Pero el mapa anuncia un cambio.
+    </p>
+
+    <p class="fade">
+      Las rutas disponibles se vuelven más estrechas y el tiempo para permanecer en ellas comienza a agotarse.
+      Pronto será necesario abandonar este territorio y llevar consigo los vestigios reunidos durante la travesía.
+      Por eso, cada hallazgo adquiere un nuevo propósito.
+      Una habilidad aprendida puede corregir una forma;
+      una técnica descubierta puede transformar una imagen;
+      un conocimiento adquirido puede revelar aquello que antes permanecía oculto.
+    </p>
+
+    <p class="fade">
+      En las ruinas comienzan a distinguirse señales de lo que está por venir.
+    </p>
+
+    <p class="fade">
+      Los tiznados ya no se encuentran únicamente explorando.
+      Se encuentran <span class="parpadeo">preparando sus vestigios para ser invocados fuera del mapa conocido</span>.
+    </p>
+
+    <p class="final">
+      La Gracia arde mientras las últimas piezas encuentran su lugar.
+    </p>
+
+    <p class="fade">
+      Pronto llegará el momento de mostrar qué quedó después del viaje.
+    </p>
+
+
+    <!-- AE 15226 -->
+    <p>
+      <span class="clickable parpadeo" onclick="toggleSeccion('s1')">
+        AE 15226
+      </span>
+    </p>
+
+    <div id="s1" class="seccion-oculta">
+      <p>
+        El sendero ha tenido algunos tramos difíciles.
+        El uso constante del celular ha interrumpido en ocasiones el recorrido y ha hecho más complejo mantener la atención sobre la ruta.
+        Aun así, una parte importante del grupo ha conseguido avanzar y sus proyectos comienzan a mostrar formas más definidas.
+        Los vestigios reunidos durante el proceso empiezan a convertirse en piezas que, más adelante, podrán salir del taller y ser mostradas como resultado del camino recorrido.
+      </p>
+
+      <img src="img/sep15226.jpg" class="imagen-grupo">
+    </div>
+
+
+    <!-- IC 7389 -->
+    <p>
+      <span class="clickable parpadeo" onclick="toggleSeccion('s2')">
+        IC 7389
+      </span>
+    </p>
+
+    <div id="s2" class="seccion-oculta">
+      <p>
+        El grupo continúa avanzando con el ritmo que ya le es propio.
+        Cada tiznado permanece concentrado en sacar adelante su proyecto y, al acercarse las últimas etapas del recorrido, las marcas del trabajo comienzan a hacerse más visibles.
+        Los proyectos muestran avances importantes y cada decisión tomada durante el camino empieza a encontrar su lugar dentro de aquello que pronto quedará terminado.
+      </p>
+
+      <img src="img/sep7389.jpg" class="imagen-grupo">
+    </div>
+
+
+    <!-- AS 3601 -->
+    <p>
+      <span class="clickable parpadeo" onclick="toggleSeccion('s3')">
+        AS 3601
+      </span>
+    </p>
+
+    <div id="s3" class="seccion-oculta">
+      <p>
+        Una parte del sendero ha llegado a su cierre y el mapa comienza a revelar una nueva región.
+        Después de concluir el proceso anterior, el grupo ha empezado a trabajar sobre bocetos y primeras ideas para lo que podría tomar forma en futuros recorridos.
+        Esta vez, la exploración ha conducido hacia el teatro de sombras, un nuevo territorio donde la luz, las siluetas y el movimiento se convierten en herramientas para imaginar los próximos vestigios.
+      </p>
+
+      <img src="img/sep3601.jpg" class="imagen-grupo">
+    </div>
+
+
+    <!-- AS 3767 -->
+    <p>
+      <span class="clickable parpadeo" onclick="toggleSeccion('s4')">
+        AS 3767
+      </span>
+    </p>
+
+    <div id="s4" class="seccion-oculta">
+      <p>
+        El sendero ha encontrado finalmente un ritmo estable.
+        Después de los primeros encuentros y de reconocer quiénes deseaban continuar el recorrido, el grupo ha logrado consolidar un pequeño núcleo de participantes realmente vinculados al proceso.
+        Desde allí, el territorio audiovisual comenzó a abrirse:
+        han realizado ejercicios, explorado posibilidades y puesto en marcha diferentes procesos frente a la cámara,
+        dejando nuevas marcas sobre un mapa que poco a poco empieza a tomar forma.
+      </p>
+
+      <img src="img/sep3767.jpg" class="imagen-grupo">
+    </div>
+  `;
+
+  document.getElementById("panel").style.display = "block";
+}
+
+
 /* TOGGLE */
 function toggleSeccion(id) {
   const el = document.getElementById(id);
